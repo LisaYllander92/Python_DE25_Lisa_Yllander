@@ -1,19 +1,16 @@
 This is 20 random simulated dice rolls: 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1 2 2 2 2 2 3 3 3 3 4 4 4 4 4 5 5 5 6 6
+1 1 1 2 2 2 2 3 3 4 4 4 5 5 5 6 6 6 6 6
 Sorted and in seperated rows: 
+1
+1
 1
 2
 2
 2
 2
-2
 3
 3
-3
-3
-4
-4
 4
 4
 4
@@ -22,3 +19,8 @@ Sorted and in seperated rows:
 5
 6
 6
+6
+6
+6
+Numbers of fours in simulated dice rolls: 
+Out of 20 dice rolls, 3 of them where fours
