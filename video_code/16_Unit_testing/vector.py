@@ -30,6 +30,7 @@ class Vector:
         if self.validate_vectors(other):
             numbers = (a - b for a, b in zip(self.numbers, other.numbers))
             return Vector(*numbers)
+        
 
     def __mul__(self, value: float) -> "Vector":
         print("__mul__ is called")

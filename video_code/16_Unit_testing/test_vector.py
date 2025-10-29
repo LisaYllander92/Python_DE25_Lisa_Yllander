@@ -1,11 +1,29 @@
-from vector import Vector
-from pytest import raises
+from vector import Vector # import the Vector
+from pytest import raises, approx # raises an error
+# approx = ish
+import math
+
+"""ALl tests should start with 'test' """
 
 def test_valid_init():
     v = Vector(1,2,3)
-    # assert = make sure that... 
+    # assert = make sure that... /what we expect
     assert v.numbers == (1,2,3)
 
+# test to see if vector is empty
+def test_empty_vector_fail():
+    with raises (ValueError):
+        Vector()
+
+# test negative values in init
+def test_negative_valid_init():
+   v = Vector(-1, -5, 3)
+   assert v.numbers == (-1, -5, 3)
+
+# test string in the init
+def test_string_in_init_fails():
+    with raises(TypeError):
+        Vector("1")
 
 def test_invalid_init():
     with raises(TypeError):
@@ -38,9 +56,26 @@ def test_subtraction():
     with raises(TypeError):
         v1 - 5
 
+# test for len() function 
+def test_different_lengths():
+    vectors = (Vector(1,2), Vector(1), Vector(1,2,3), Vector(1,2,3,4))
+    excepted_lengths = (2, 1, 3, 4)
+
+    for vector, excepted_length in zip(vectors, excepted_lengths):
+        assert len(vector) == excepted_length
+
+
+
 def test_length():
     v = Vector(1,2)
     assert len(v) == 2
+
+# test abs() function
+def test_vector_norm_valid():
+    v = Vector(1,4)
+    expeted_norm =  math.sqrt(v[0]**2 + v[1]**2) #import math
+    assert abs(v) == approx(expeted_norm)
+
 
 def test_abs():
     v = Vector(4,3)
