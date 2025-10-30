@@ -25,3 +25,11 @@ def test_invalid_type_bool_init_fail():
 def test_zero_base_fail():
     with raises(ValueError):
         Triangle(base=0, height=1)
+
+# Test area
+
+def test_area_calculation():
+    triangle = Triangle(base = 2, height =3)
+    assert triangle.area == 3
+
+
